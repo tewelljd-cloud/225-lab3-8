@@ -48,13 +48,13 @@ spec:
         - name: ME_CONFIG_MONGODB_ADMINUSERNAME   # MongoDB admin username variable
           valueFrom:
             secretKeyRef:                        # Retrieve from Kubernetes Secret
-              name: mongo-secret                  # Secret resource name
+              name: mongodb-secret                  # Secret resource name
               key: mongo-root-username            # Key within the secret
 
         - name: ME_CONFIG_MONGODB_ADMINPASSWORD   # MongoDB admin password variable
           valueFrom:
             secretKeyRef:                        # Retrieve from the same Secret
-              name: mongo-secret
+              name: mongodb-secret 
               key: mongo-root-password
 
         - name: ME_CONFIG_MONGODB_SERVER          # MongoDB server connection info
